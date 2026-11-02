@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+/CCS-1.0.md
+/CREATE-COMPANION-PROMPT.md
+dist/
+/graft/
+/.local-history/

@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/ccs/1.0/companion.schema.json",
+  "title": "Contextual Companion Specification (CCS) 1.0 manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["ccs_version", "id", "version", "kind", "domain", "activation", "adaptation", "authority", "evaluation"],
+  "properties": {
+    "ccs_version": {"enum": ["1.0.0", "1.0.1"]},
+    "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 64},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "kind": {"const": "contextual-educational-companion"},
+    "domain": {
+      "type": "object", "additionalProperties": false,
+      "required": ["purpose", "includes", "excludes"],
+      "properties": {
+        "purpose": {"$ref": "#/$defs/nonempty"},
+        "includes": {"$ref": "#/$defs/strings"},
+        "excludes": {"$ref": "#/$defs/strings"}
+      }
+    },
+    "activation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["direct", "implicit", "followups", "negative"],
+      "properties": {
+        "direct": {"$ref": "#/$defs/strings"},
+        "implicit": {"$ref": "#/$defs/strings"},
+        "followups": {"$ref": "#/$defs/strings"},
+        "negative": {"$ref": "#/$defs/strings"}
+      }
+    },
+    "adaptation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dimensions", "signals", "no_profiling"],
+      "properties": {
+        "dimensions": {"$ref": "#/$defs/strings"},
+        "signals": {"$ref": "#/$defs/strings"},
+        "no_profiling": {"const": true}
+      }
+    },
+    "authority": {
+      "type": "object", "additionalProperties": false,
+      "required": ["execution_owner", "workflow_owner", "extra_gates", "companion_tool_calls", "required_frameworks"],
+      "properties": {
+        "execution_owner": {"const": "host-agent"},
+        "workflow_owner": {"const": "existing-project-workflow"},
+        "extra_gates": {"const": false},
+        "companion_tool_calls": {"const": false},
+        "required_frameworks": {"type": "array", "items": {"$ref": "#/$defs/nonempty"}, "maxItems": 0}
+      }
+    },
+    "evaluation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["cases", "discovery_requires_live_test"],
+      "properties": {
+        "cases": {"type": "string", "minLength": 1, "pattern": "^tests/cases/[a-z0-9-]+\\.json$"},
+        "discovery_requires_live_test": {"const": true}
+      }
+    }
+  },
+  "$defs": {
+    "nonempty": {"type": "string", "minLength": 1},
+    "strings": {"type": "array", "items": {"$ref": "#/$defs/nonempty"}, "minItems": 1, "uniqueItems": true}
+  }
+}

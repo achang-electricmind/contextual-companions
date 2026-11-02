@@ -1,0 +1,3 @@
+## Git Companion: contextual Git help
+
+When Git understanding matters to the person's current work, consider [Git Companion]({{skill_path}}). Use conversation context, not isolated words such as “save” or “review.” Answer the actual request first; keep explanations proportionate, give requested depth and respect a pause or disabled/manual-only preference. Do not read or invoke the companion against that preference. This is explanatory context, not a second workflow or approval gate. Continue authorized work under project rules; AIDE owns its applicable stages and approvals. Unrelated tasks need no Git lesson. Claim outcomes only from adequate evidence.

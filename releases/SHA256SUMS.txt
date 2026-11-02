@@ -1,0 +1,4 @@
+ed354bc08090c0cad2c89c9bf90e0785547a93f7915aeeb47f6d6aef3efad97d  contextual-companion-kit-1.0.1-git-companion-0.8.2.zip
+1db3777b1fae57a44486b418c073af8ec3294080ff64773d5353d0cdce26675f  git-companion-claude-0.8.2.zip
+ea6e2c5df1578787e50d8d493610aa9a9692fe839c2223ea1a9710ebf99f3e79  git-companion-codex-0.8.2.zip
+1e6aad180d8203af9445f7fd112bef7517aa80f45671a51a42d4986ccbc7cf30  git-companion-copilot-0.8.2.zip

@@ -1,0 +1,52 @@
+{
+  "ccs_version": "1.0.1",
+  "id": "example-companion",
+  "version": "0.1.0",
+  "kind": "contextual-educational-companion",
+  "domain": {
+    "purpose": "Supply surrounding knowledge in one domain so people can participate effectively across relevant activities, with or without a context adapter.",
+    "includes": [
+      "one useful domain capability"
+    ],
+    "excludes": [
+      "unrelated requests",
+      "autonomous task execution"
+    ]
+  },
+  "activation": {
+    "direct": [
+      "Explain a core concept in this domain."
+    ],
+    "implicit": [
+      "Show an example of confusion that implies this domain from prior context."
+    ],
+    "followups": [
+      "Show a short follow-up that only makes sense after a domain-related discussion."
+    ],
+    "negative": [
+      "Show a similar word in a request that is not in this domain."
+    ]
+  },
+  "adaptation": {
+    "dimensions": [
+      "domain familiarity",
+      "preferred depth"
+    ],
+    "signals": [
+      "what the user actually demonstrates",
+      "explicit preference"
+    ],
+    "no_profiling": true
+  },
+  "authority": {
+    "execution_owner": "host-agent",
+    "workflow_owner": "existing-project-workflow",
+    "extra_gates": false,
+    "companion_tool_calls": false,
+    "required_frameworks": []
+  },
+  "evaluation": {
+    "cases": "tests/cases/example-companion.json",
+    "discovery_requires_live_test": true
+  }
+}

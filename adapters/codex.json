@@ -1,0 +1,7 @@
+{
+  "host": "codex",
+  "display_name": "OpenAI Codex",
+  "skill_dir": ".agents/skills/{id}",
+  "instruction_file": "AGENTS.md",
+  "notes": "Project Skill plus AGENTS.md; confirm actual Codex environment and instruction load."
+}

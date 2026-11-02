@@ -1,0 +1,7 @@
+{
+  "host": "copilot",
+  "display_name": "GitHub Copilot in VS Code",
+  "skill_dir": ".github/skills/{id}",
+  "instruction_file": ".github/copilot-instructions.md",
+  "notes": "Project Skill auto-discovery and workspace instruction cue; confirm selected Copilot harness and enterprise policy."
+}

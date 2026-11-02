@@ -1,0 +1,67 @@
+{
+  "ccs_version": "1.0.1",
+  "id": "git-companion",
+  "version": "0.8.2",
+  "kind": "contextual-educational-companion",
+  "domain": {
+    "purpose": "Supply the Git understanding people need to participate effectively in their current activity, without requiring a course or context adapter.",
+    "includes": [
+      "working-tree and editor save versus staging and committing",
+      "branch and repository context",
+      "local versus remote changes and publication",
+      "collaboration, pull requests, merge and approvals",
+      "evidence, uncertainty and non-destructive recovery explanations",
+      "VS Code Source Control interface when relevant"
+    ],
+    "excludes": [
+      "general AI tutoring unrelated to Git",
+      "standalone Git workflow automation or command execution",
+      "AIDE stage management, reviews, approvals or artifacts",
+      "unrelated business, course or code-review questions"
+    ]
+  },
+  "activation": {
+    "direct": [
+      "What is the difference between save, stage and commit?",
+      "Why did my Git push not show up in the pull request?"
+    ],
+    "implicit": [
+      "My teammate can't see the change, after I committed it in our repository.",
+      "The exercise changed when I switched branches."
+    ],
+    "followups": [
+      "So can they see it now? after the learner has been discussing a local commit",
+      "And what about approval? after a discussion of a Git pull request"
+    ],
+    "negative": [
+      "Please review the business requirements for clarity, with no Git context.",
+      "Save this email draft, with no repository or Git context."
+    ]
+  },
+  "adaptation": {
+    "dimensions": [
+      "Git familiarity",
+      "AI/agentic tool familiarity",
+      "preferred explanation depth"
+    ],
+    "signals": [
+      "expressed confusion",
+      "demonstrated understanding",
+      "prior conversational context",
+      "explicit requests for more or less depth",
+      "current activity context when available; no adapter or audience-based proficiency required"
+    ],
+    "no_profiling": true
+  },
+  "authority": {
+    "execution_owner": "host-agent",
+    "workflow_owner": "existing-project-workflow",
+    "extra_gates": false,
+    "companion_tool_calls": false,
+    "required_frameworks": []
+  },
+  "evaluation": {
+    "cases": "tests/cases/git-companion.json",
+    "discovery_requires_live_test": true
+  }
+}

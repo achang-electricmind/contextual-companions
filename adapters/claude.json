@@ -1,0 +1,7 @@
+{
+  "host": "claude",
+  "display_name": "Claude Code",
+  "skill_dir": ".claude/skills/{id}",
+  "instruction_file": "CLAUDE.md",
+  "notes": "Project Skill plus CLAUDE.md; confirm actual Claude Code environment and instruction load."
+}
